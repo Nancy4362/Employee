@@ -133,6 +133,8 @@
         }
     }
 }
+
 $(document).ready(function () {
     new Employees();
 });
+

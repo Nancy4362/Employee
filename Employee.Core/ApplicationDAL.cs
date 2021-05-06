@@ -23,13 +23,13 @@ namespace Employee.Core
                     EmployeeFullName = "Dave Test",
                     Address = "Test Address",
                     PhoneNumber = "1234567890",
-                    Position = Position.prdMgr,
+                    Position = "General_Manager",
                     },
                     new Employee{
                         EmployeeFullName = "John Test",
                         Address = "Test Address 2",
                         PhoneNumber = "4567890112",
-                        Position = Position.hrDir,
+                        Position = "General_Manager"
                     },
 
                 };
