@@ -16,7 +16,34 @@ namespace Employee.Core
             _appContext = context;
             _logger = logger;
         }
+        private void AddEmployees()
+        {
+            var emp = new List<Employee>
+                { new Employee{
+                    EmployeeFullName = "Dave Test",
+                    Address = "Test Address",
+                    PhoneNumber = "1234567890",
+                    Position = Position.prdMgr,
+                    },
+                    new Employee{
+                        EmployeeFullName = "John Test",
+                        Address = "Test Address 2",
+                        PhoneNumber = "4567890112",
+                        Position = Position.hrDir,
+                    },
 
+                };
+            _appContext.Employees.AddRange(emp);
+            try
+            {
+                _appContext.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                _logger.Error($"Could not save Employees {ex}");
+            }
+
+        }
         public List<Employee> GetData()
         {
             try

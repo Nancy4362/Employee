@@ -3,6 +3,7 @@
     private urlAddEmployee = '/employee/add';
     private urlSaveEmployee = '/employee/save';
     private urlDeleteEmployee = '/employee/delete';
+    private urlEditEmployee = '/employee/edit';
 
     constructor() {
         this.init();
@@ -67,7 +68,20 @@
             console.error(e);
         }
     }
-   
+    private edit(data) {
+        try {
+            Util.request(this.urlEditEmployee, 'get', 'html', (response) => {
+                $('#employee_form').html(response)
+
+                this.initForm();
+            }, () => {
+                console.error('Failed to edit employee #T79G352. Please try again');
+            }, data);
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
     private initForm() {
         try {
 

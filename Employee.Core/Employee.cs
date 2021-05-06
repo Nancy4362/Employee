@@ -5,10 +5,20 @@ using System.Text;
 
 namespace Employee.Core
 {
-    public enum Position { Project_Manager, Production_Mgr, HR_Dir, Senior_Editor, Editor, Gen_Mgr, Prod_Mgr }
+    public struct Position
+    {
+        public const string prjMgr = "Project Manager";
+        public const string prdMgr = "Production Manager";
+        public const string hrDir = "HR Director";
+        public const string senEdr = "Senior Editor";
+        public const string edr = "Editor";
+        public const string genMgr = "General Manager";
+        
+    }
     public class Employee
     {
         [Key]
+        
         public int EmployeeId { get; set; }
         [Required]
         public string EmployeeFullName { get; set; }

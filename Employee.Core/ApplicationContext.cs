@@ -13,7 +13,7 @@ namespace Employee.Core
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Employee>().ToTable("Employee", "dbo");
+            modelBuilder.Entity<Employee>().ToTable("Employee", "dbo").Property(b => b.EmployeeId).ValueGeneratedOnAdd();
         }
 
     }

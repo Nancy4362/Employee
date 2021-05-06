@@ -42,7 +42,7 @@ namespace Employee.Controllers
             }
         }
         [HttpGet("employee/add")]
-        public IActionResult AddEmployeeForm()
+        public IActionResult AddEmployee()
         {
             try
             {
@@ -76,9 +76,29 @@ namespace Employee.Controllers
             return Json(new { success = false, message = "Error while deleting." });
             
         }
+        [HttpGet("employee/edit")]
+        public IActionResult EditEmployee(int id)
+        {
+            try
+            {
+                Core.Employee employee =  _appDal.GetData().FirstOrDefault(e => e.EmployeeId == id);
+                if (employee == null)
+                {
+                    return NotFound();
+                }
 
-       
+                ViewData["Title"] = "Personal Information";
+                ViewData["Employee"] = employee;
+                return PartialView("~/Views/Employee/_AddForm.cshtml");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return Json(new { success = false, message = "Error while deleting." });
+            }
+        }
 
-        
+
+
     }
 }

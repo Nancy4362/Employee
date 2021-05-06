@@ -4,6 +4,7 @@ var Employees = /** @class */ (function () {
         this.urlAddEmployee = '/employee/add';
         this.urlSaveEmployee = '/employee/save';
         this.urlDeleteEmployee = '/employee/delete';
+        this.urlEditEmployee = '/employee/edit';
         this.init();
     }
     Employees.prototype.init = function () {
@@ -15,7 +16,7 @@ var Employees = /** @class */ (function () {
             });
         }
         catch (e) {
-            //console.error(e);
+            console.error(e);
         }
     };
     Employees.prototype.initTable = function () {
@@ -30,11 +31,11 @@ var Employees = /** @class */ (function () {
                     _this.delete(data);
                 });
             }, function () {
-                //console.error('Failed to get data. Please try again');
+                console.error('Failed to get data. Please try again');
             });
         }
         catch (e) {
-            //console.error(e);
+            console.error(e);
         }
     };
     Employees.prototype.add = function () {
@@ -45,11 +46,11 @@ var Employees = /** @class */ (function () {
                 $('#employee_list').hide();
                 _this.initForm();
             }), function () {
-                //console.error('Failed to get employee #T6G352. Please try again');
+                console.error('Failed to get employee #T6G352. Please try again');
             };
         }
         catch (e) {
-           // console.error(e);
+            console.error(e);
         }
     };
     Employees.prototype.delete = function (data) {
@@ -64,7 +65,21 @@ var Employees = /** @class */ (function () {
             }
         }
         catch (e) {
-            //console.error(e);
+            console.error(e);
+        }
+    };
+    Employees.prototype.edit = function (data) {
+        var _this = this;
+        try {
+            Util.request(this.urlEditEmployee, 'get', 'html', function (response) {
+                $('#employee_form').html(response);
+                _this.initForm();
+            }, function () {
+                console.error('Failed to edit employee #T79G352. Please try again');
+            }, data);
+        }
+        catch (e) {
+            console.error(e);
         }
     };
     Employees.prototype.initForm = function () {
@@ -78,7 +93,7 @@ var Employees = /** @class */ (function () {
             });
         }
         catch (e) {
-            //console.error(e);
+            console.error(e);
         }
     };
     Employees.prototype.save = function () {
@@ -91,13 +106,13 @@ var Employees = /** @class */ (function () {
                 }
                 else {
                     $.notify(response.message);
-                    //console.error('Failed to get data #T7G985. Please try again.');
+                    console.error('Failed to get data #T7G985. Please try again.');
                 }
             }, function () {
             }, employee);
         }
         catch (e) {
-            //console.error(e);
+            console.error(e);
         }
     };
     Employees.prototype.createEmployee = function () {
@@ -112,7 +127,7 @@ var Employees = /** @class */ (function () {
             return employee;
         }
         catch (e) {
-            //console.error(e);
+            console.error(e);
         }
     };
     return Employees;
