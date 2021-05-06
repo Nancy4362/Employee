@@ -1,0 +1,30 @@
+﻿.button {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 10px 30px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+}
+.page-title {
+
+}
+.employee-add {
+
+}
+.left-panel {
+    width: 250px;
+    position: fixed;
+    float: left;
+    /*border: solid 1px lightgrey;*/
+    box-shadow: 0px 2px 11px -2px rgba(0,0,0,0.75);
+    border-radius: 4px;
+}
+.right-panel {
+    width: calc(100% - 270px);
+    float: right;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "employee",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery": "^3.5.5"
+  },
+  "dependencies": {
+    "util": "^0.12.3"
+  },
+  "description": ""
+}
