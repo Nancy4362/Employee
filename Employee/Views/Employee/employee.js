@@ -30,6 +30,11 @@ var Employees = /** @class */ (function () {
                     var data = { id: id };
                     _this.delete(data);
                 });
+                $(document).on("click", ".employee-edit", function (e) {
+                    var id = $(e.currentTarget).data('id');
+                    var data = { id: id };
+                    _this.edit(data);
+                });
             }, function () {
                 console.error('Failed to get data. Please try again');
             });

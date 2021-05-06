@@ -31,6 +31,14 @@
                     this.delete(data);
 
                 });
+
+                $(document).on("click", ".employee-edit", (e) => {
+
+                    const id = $(e.currentTarget).data('id');
+                    const data = { id: id };
+                    this.edit(data);
+
+                });
             }, function () {
                 console.error('Failed to get data. Please try again');
             });
